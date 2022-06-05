@@ -1,4 +1,6 @@
-server_to_send = 934876901921652787
+server_to_send = ID_SERVER_HERE
+excel_name = "EXCEL_NAME_HERE"
+
 import asyncio
 import pickle
 
@@ -27,7 +29,7 @@ import traceback
 
 load_dotenv("bot.env")
 TOKEN = os.getenv('DISCORD_TOKEN')
-excel_name = "PjsRoyaumesOublies"
+
 
 bot_prefix = '!'
 bot = commands.Bot(command_prefix=bot_prefix)
@@ -354,7 +356,7 @@ def save_pj(perso):
     global excel_name
     # use creds to create a client to interact with the Google Drive API
     scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive','https://www.googleapis.com/auth/drive.file','https://www.googleapis.com/auth/spreadsheets']
-    creds = ServiceAccountCredentials.from_json_keyfile_name('pjs-royaumes-oubliees-0a2c77f89dcb.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('google_drive.json', scope)
     client = gspread.authorize(creds)
 
 
